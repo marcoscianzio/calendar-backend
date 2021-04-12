@@ -36,14 +36,6 @@ router.put(
     actualizarEvento
 );
 
-router.delete(
-    "/:id",
-    [
-        check("title", "Titulo es obligatorio").not().isEmpty(),
-        check("start", "fecha de inicio es obligatoria").custom(isDate),
-        validarCampos,
-    ],
-    eliminarEvento
-);
+router.delete("/:id", eliminarEvento);
 
 module.exports = router;
